@@ -5,12 +5,11 @@ import Card from './Card'
 import { useRef } from 'react'
 import '../Styles/Home.css'
 import myImage from '../Image/nodata.jpeg';
+import LoadingImage from '../Image/loadings.gif';
 export const Home = () => {
     const [country,setCountry]=useState([])
   const [query,setQuery]=useState('')
   const [loading,setLoading]=useState(false);
-
- 
   const getCountry=async (search)=>{
     
     
@@ -18,11 +17,14 @@ export const Home = () => {
     
     if(!query.trim()){
         try{
+          setLoading(true)
             let res=await axios.get(url);
             setCountry(res.data)
+            setLoading(false)
         }
         catch(err){
-            console.error(err)
+          setLoading(false)
+            
             setCountry([])
         }
      
@@ -31,14 +33,17 @@ export const Home = () => {
     
     else{  
         try{
+          setLoading(true)
             url=`https://restcountries.com/v3.1/currency/${search}`
             let responce=await axios.get(url)
             console.log("cs",responce.data)
             setCountry(responce.data)
+            setLoading(false)
             console.log(country)
         }   catch(err){
             console.error(err)
             setCountry([])
+            setLoading(false)
         }
         
     }
@@ -61,6 +66,7 @@ export const Home = () => {
         
       }
     },[query])
+    if(loading) return <img src={LoadingImage} alt="" className='loading-img'/>
     
   return (
     <div className='home-container'>
