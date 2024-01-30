@@ -1,0 +1,53 @@
+.country-list{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 30px;
+    box-sizing: border-box;
+    padding: 25px;
+}
+.search{
+    margin: 20px;
+    padding: 15px;
+}
+input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #007bff; /* Change border color on focus */
+  }
+@media (max-width: 450px) {
+    .country-list {
+      grid-template-columns: repeat(1, 1fr); /* Single column layout */
+    }
+  }
+  
+  @media (min-width: 451px) and (max-width: 768px) {
+    .country-list {
+      grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 992px) {
+    .country-list {
+      grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+    }
+  }
+  
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .country-list {
+      grid-template-columns: repeat(4, 1fr); /* Four columns layout */
+    }
+  }
+  
+  @media (min-width: 1201px) {
+    .country-list {
+      grid-template-columns: repeat(5, 1fr); /* Five columns layout */
+    }
+  }
+  

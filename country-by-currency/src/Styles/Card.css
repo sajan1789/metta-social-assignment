@@ -1,0 +1,14 @@
+.card-container{
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    height: auto;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+}
+.card-container:hover{
+    background-color: #007A96;
+    color: white;
+    cursor: pointer;  
+    transform: scale(1.05);  
+}
