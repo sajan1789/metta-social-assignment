@@ -71,13 +71,14 @@ export const Home = () => {
       if (inputRef.current) {
         inputRef.current.focus();
     }
-    },[query])
+    },[])
     if(loading) return <img src={LoadingImage} alt="" className='loading-img'/>
     
   return (
     <div className='home-container'>
+      <h1 className='home-header'>Country Search by Currency</h1>
         <div className='search'>
-            <input type="text" ref={inputRef } value={query} onChange={(e)=>setQuery(e.target.value)}/> 
+            <input type="text" ref={inputRef } placeholder="Search for a country by its currency code" value={query} onChange={(e)=>setQuery(e.target.value)}/> 
         </div>
         {country.length>0?(
           <div className='country-list'>

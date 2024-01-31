@@ -6,8 +6,23 @@
     padding: 25px;
 }
 .search{
-    margin: 20px;
+    margin: 10px;
     padding: 15px;
+}.home-header {
+
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  background-color: #007A96;
+  width: 40%;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  
 }
 input[type="text"] {
     width: 50%;
